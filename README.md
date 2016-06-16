@@ -1,6 +1,6 @@
 # Twitta
 
-![Twitta Logo](https://github.com/jlhall/twitta/raw/master/public/css/img/twitta.jpg "Twitta Logo")
+![Twitta Logo](https://github.com/jlhall/twitta/blob/master/public/img/twitta.jpg "Twitta Logo")
 
 Twitter clone group project for SF Nighthawks 2016
 
