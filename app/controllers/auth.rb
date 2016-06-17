@@ -15,5 +15,9 @@ get '/logout' do
 end
 
 get '/login' do
-  erb :index
+  erb :login
+end
+
+get '/' do
+  redirect to '/login'
 end
