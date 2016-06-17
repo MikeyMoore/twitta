@@ -3,3 +3,7 @@ get '/users/:id' do
 	@posts = Post.find_by(user_id: session[:user_id]) 
 	erb :show
 end
+
+get '/users/edit'
+	erb :edit
+end
