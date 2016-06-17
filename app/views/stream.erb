@@ -1,3 +1,9 @@
+<form class="center-me">
+    <input type="submit" value="Home" class="button" formaction="/" formmethod="get">
+  </form>
+
+<div id='stream-tweets'>
 <% @posts.reverse.each do |post| %>
-	<%= post.content %> <br>
+	<p class="triangle-isosceles"><%= post.content %></p><br>
 <% end %>
+</div>

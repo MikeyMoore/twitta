@@ -11,11 +11,14 @@
 <div class="sidebar">
 	<!-- logo/name on top -->
 	<!-- where followers/following goes -->
+	<form method="get" action="/users/stream">
+	<input type="submit" value="Stream" class="button">
+</form>
 </div>
 <div class="main">
 	<%= @user.first_name %>
 	<%= @user.last_name %>
-	<%= @user.username %>
+	<h1><%= @user.username %></h1>
 	<%= @user.about_me %>
 	<%= @user.location %>
 	<form method="get" action="/users/<%= @user.id %>/edit">
@@ -28,14 +31,14 @@
 		<input type="submit" value="Twit" class="button">
 	</form>
 
-	<% if @posts != nil %>
-	<% @posts.each do |post| %>
-	<%= post.content %>
-	<% end %>
-	<% end %>
+<div id="tweets">
+    <% if @posts != nil %>
+    <% @posts.reverse.each do |post| %>
+    <p class="triangle-isosceles"><%= post.content %></p>
+    <% end %>
+    <% end %>
+  </div>
 
-<form method="get" action="/users/stream">
-	<input type="submit" value="Stream" class="button">
-</form>
+
 </div>
 

@@ -13,15 +13,16 @@
 	<!-- where followers/following goes -->
 </div>
 <div class="main">
-	<%= @user.username %>
+	<h1><%= @user.username %></h1>
 	<%= @user.about_me %>
 	<%= @user.location %>
-
+	<div id="tweets">
 	<% if @posts != nil %>
-	<% @posts.each do |post| %>
-	<%= post.content %>
+	<% @posts.reverse.each do |post| %>
+	<p class="triangle-isosceles">	<%= post.content %></p>
 	<% end %>
 	<% end %>
+	</div>
 
 <form method="get" action="/users/stream">
 	<input type="submit" value="Stream" class="button">
