@@ -1,3 +1,9 @@
+get '/users/stream' do
+	@posts = []
+	@posts = Post.order(:updated_at)
+	erb :stream
+end
+
 get '/users/:id' do
 	@user = User.find(params[:id])
 	@posts = Post.where(user_id: @user.id) 
@@ -37,5 +43,13 @@ post '/users/post' do
 	@post = Post.create(content: params[:Twit], user_id: params[:id])
 	redirect '/'
 end
+
+get '/users/friend/:id' do
+	@user = User.find(params[:id])
+	@posts = Post.where(user_id: @user.id) 
+	erb :show_other
+end
+
+
 
 
