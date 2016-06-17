@@ -1,12 +1,15 @@
 <form method="post" action="/users/edit">
-	<input type="text" name="user[first_name]" placeholder="<%= @user.try(:first_name) %>">
-	<input type="text" name="user[last_name]" placeholder="<%= @user.try(:last_name) %>">
-	<input type="text" name="user[email]" placeholder="<%= @user.try(:email) %>">
-	<input type="text" name="user[username]" placeholder="<%= @user.try(:username) %>">
-	<input type="text" name="user[about_me]" placeholder="<%= @user.try(:about_me) %>">
-	<input type="text" name="user[location]" placeholder="<%= @user.try(:location) %>">
+<input type="hidden" name="id" value="<%= @user.id %>">
+	<input type="text" name="user[first_name]" placeholder="First name">
+	<input type="text" name="user[last_name]" placeholder="Last name">
+	<input type="text" name="user[email]" placeholder="Email">
+	<input type="text" name="user[username]" placeholder="Username">
+	<input type="text" name="user[about_me]" placeholder="Bio">
+	<input type="text" name="user[location]" placeholder="Where ya from?">
+	<input type="submit" name="submit">
 </form>
 	
+
 	
 	
 
