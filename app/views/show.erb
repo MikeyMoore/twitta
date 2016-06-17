@@ -16,3 +16,7 @@
 	<% @posts.each do |post| %>
 	<%= @posts.content %>
 	<% end %>
+
+<form action="/users/edit" method="get">
+	<input type="submit" value="Edit Profile">
+</form>
