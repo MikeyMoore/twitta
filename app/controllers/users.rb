@@ -38,4 +38,10 @@ post '/users/post' do
 	redirect '/'
 end
 
+get '/users/friend/:id' do
+	@user = User.find(params[:id])
+	@posts = Post.where(user_id: @user.id) 
+	erb :show_other
+end
+
 
