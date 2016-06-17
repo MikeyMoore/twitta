@@ -3,12 +3,18 @@
 		<input type="text" name="search">
 		<input type="submit" value="Search" class="button">
 	</form>
+
+	<form>
+		<input type="submit" value="Log Out" id="log-out-button" formaction="/logout" formmethod="post">
+	</form>
 </div>
 <div class="sidebar">
 	<!-- logo/name on top -->
 	<!-- where followers/following goes -->
 </div>
 <div class="main">
+	<%= @user.first_name %>
+	<%= @user.last_name %>
 	<%= @user.username %>
 	<%= @user.about_me %>
 	<%= @user.location %>
