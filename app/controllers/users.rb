@@ -4,6 +4,23 @@ get '/users/:id' do
 	erb :show
 end
 
+post '/users/results' do
+	@queries = []
+	first = User.where(["first_name LIKE ?", "%#{params[:search]}%"])
+	last = User.where(["last_name LIKE ?", "%#{params[:search]}%"])
+	username = User.where(["username LIKE ?", "%#{params[:search]}%"])
+	if !first.empty?
+		@queries << first
+	end
+	if !last.empty?
+		@queries << last
+	end
+	if !username.empty?
+		@queries << username
+	end
+	erb :results
+end
+
 get '/users/:id/edit' do
 	@user = User.find(params[:id])
 	erb :edit
