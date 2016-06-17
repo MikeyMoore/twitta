@@ -6,18 +6,21 @@
 	<%= @user.username %>
 	<%= @user.about_me %>
 	<%= @user.location %>
-<form action="/users/edit" method="get">
+<form method="get" action="/users/<%= @user.id %>/edit">
 	<input type="submit" value="Edit Profile">
 </form>
 
 <form method="post" action="/users/post">
+<input type="hidden" name="id" value="<%= @user.id %>">
 	<input id="twit-text" type="text" name="Twit" placeholder="Got something to say?">
 	<input type="submit" value="Twit" class="button">
 </form>
 
-<% if @post != nil %>
+<% if @posts != nil %>
 	<% @posts.each do |post| %>
-	<%= @posts.content %>
+	<%= post.content %>
 	<% end %>
 <% end %>
+
+
 
