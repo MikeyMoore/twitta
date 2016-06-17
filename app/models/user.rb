@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
 
 
   def authenticate(password)
-  	self.password == password
+  	self.encrypted_password == password
   end
 
 end

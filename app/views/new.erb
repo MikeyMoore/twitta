@@ -1,0 +1,27 @@
+<div class="main">
+    <form action='/login' method="post">
+      <div id="form-field-left">
+        <input type="text" name="user[first_name]" placeholder="first anme" id="email-field">
+      </div>
+      <div id="form-field-right">
+        <input type="text" name="user[last_name]" placeholder="last name" id="pass-field">
+      </div>
+      <div id="form-field-left">
+        <input type="text" name="user[email]" placeholder="email" id="user-field">
+      </div>
+      <div id="form-field-right">
+        <input type="text" name="user[username]" placeholder="username" id="pass-field">
+      </div>
+      <div id="form-field-right">
+        <input type="password" name="user[encrypted_password]" placeholder="password" id="pass-field">
+      </div
+      <div id="form-field-right">
+        <input type="text" name="user[location]" placeholder="location" id="pass-field">
+      </div>      <div class="button-wrapper">
+        <input type="submit" value="back" id="back-button">
+        
+        <input type="submit" value="Register" id="register-button" formaction="/users/new" formmethod="post">
+
+      </div>
+    </form>
+  </div>

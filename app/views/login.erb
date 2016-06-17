@@ -1,14 +1,16 @@
 <div class="main">
     <form>
       <div id="form-field-left">
-        <input type="text" name="email" placeholder="Email" id="email-field">
+        <input type="text" name="user[email]" placeholder="email" id="email-field">
       </div>
       <div id="form-field-right">
-        <input type="password" name="email" placeholder="Password" id="pass-field">
+        <input type="password" name="user[password]" placeholder="password" id="pass-field">
       </div>
       <div class="button-wrapper">
         <input type="submit" value="Login" id="login-button">
-        <input type="submit" value="Sign Up" id="sign-up-button">
+        
+        <input type="submit" value="Sign Up" id="sign-up-button" formaction="/users/new" formmethod="get">
+
       </div>
     </form>
   </div>
