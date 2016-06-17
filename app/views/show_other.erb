@@ -1,0 +1,21 @@
+<div class="navbar">
+	<form method="post" action="/users/results">
+		<input type="text" name="search">
+		<input type="submit" value="Search" class="button">
+	</form>
+</div>
+<div class="sidebar">
+	<!-- logo/name on top -->
+	<!-- where followers/following goes -->
+</div>
+<div class="main">
+	<%= @user.username %>
+	<%= @user.about_me %>
+	<%= @user.location %>
+
+	<% if @posts != nil %>
+	<% @posts.each do |post| %>
+	<%= post.content %>
+	<% end %>
+	<% end %>
+</div>
