@@ -1,7 +1,7 @@
 
 post '/login' do
-  user = User.find_by(username: params[:username])
-  if user.authenticate(params[:password])
+  user = User.find_by(email: params[:email])
+  if user.authenticate(params[:encrypted_password])
     session[:user_id] = user.id
     erb :home
   else
@@ -20,4 +20,17 @@ end
 
 get '/' do
   redirect to '/login'
+end
+
+get '/users/new' do 
+  erb :new
+  end
+
+post '/users/new' do
+@a = User.new(params[:user])
+if @a.save == true
+  redirect '/login'
+else
+  redirect '/users/new'
+end
 end
