@@ -1,9 +1,9 @@
 
 post '/login' do
-  user = User.find_by(email: params[:email])
-  if user.authenticate(params[:encrypted_password])
-    session[:user_id] = user.id
-    erb :home
+  @user = User.find_by(email: params[:user][:email])
+  if @user.authenticate(params[:user][:password])
+    session[:user_id] = @user.id
+    erb :show
   else
     redirect '/'
   end
