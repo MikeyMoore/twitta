@@ -1,23 +1,27 @@
+<div class="navbar">
 <form method="get" action="??route??">
 	<input type="text" name="users?" placeholder="type your search here">
 	<input type="submit" value="Search" class="button">
 </form>
-
+</div>
+<div class="sidebar">
+	<!-- logo/name on top -->
+	<!-- where followers/following goes -->
+</div>
+<div class="main">
 	<%= @user.username %>
 	<%= @user.about_me %>
 	<%= @user.location %>
-<form action="/users/edit" method="get">
-	<input type="submit" value="Edit Profile">
-</form>
-
-<form method="post" action="/users/post">
-	<input id="twit-text" type="text" name="Twit" placeholder="Got something to say?">
-	<input type="submit" value="Twit" class="button">
-</form>
-
-<% if @post != nil %>
-	<% @posts.each do |post| %>
-	<%= @posts.content %>
+	<form action="/users/edit" method="get">
+		<input type="submit" value="Edit Profile">
+	</form>
+	<form method="post" action="/users/post">
+		<input id="twit-text" type="text" name="Twit" placeholder="Got something to say?">
+		<input type="submit" value="Twit" class="button">
+	</form>
+	<% if @post != nil %>
+		<% @posts.each do |post| %>
+		<%= @posts.content %>
+		<% end %>
 	<% end %>
-<% end %>
-
+</div>
