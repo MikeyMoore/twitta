@@ -24,7 +24,6 @@ post '/users/results' do
 	if !username.empty?
 		@queries << username
 	end
-	# redirect
 	erb :results
 end
 
@@ -36,7 +35,24 @@ end
 post '/users/edit' do
 	id = params[:id]
 	@user = User.find(params[:id])
-	@user.update(params[:user])
+	if params[:first_name] != ""
+		@user.update(first_name: params[:first_name])
+	end
+	if params[:last_name] != ""
+		@user.update(last_name: params[:last_name])
+	end
+	if params[:email] != ""
+		@user.update(email: params[:email])
+	end
+	if params[:username] != ""
+		@user.update(username: params[:username])
+	end
+	if params[:about_me] != ""
+		@user.update(about_me: params[:about_me])
+	end
+	if params[:location] != ""
+		@user.update(location: params[:location])
+	end
 	redirect "/users/#{session[:user_id]}"
 end
 
