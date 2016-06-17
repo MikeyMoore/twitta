@@ -10,9 +10,9 @@
 	<input type="submit" value="Edit Profile">
 </form>
 
-<form method="post" action="??route??">
-	<input id="twit-text" type="text" name="twit" placeholder="Got something to say?">
-	<input type="submit" value="Twit?" class="button">
+<form method="post" action="/users/post">
+	<input id="twit-text" type="text" name="Twit" placeholder="Got something to say?">
+	<input type="submit" value="Twit" class="button">
 </form>
 
 	<% @posts.each do |post| %>
