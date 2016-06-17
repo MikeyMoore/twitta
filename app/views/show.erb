@@ -15,7 +15,9 @@
 	<input type="submit" value="Twit" class="button">
 </form>
 
+<% if @post != nil %>
 	<% @posts.each do |post| %>
 	<%= @posts.content %>
 	<% end %>
+<% end %>
 
