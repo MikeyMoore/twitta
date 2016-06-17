@@ -1,0 +1,18 @@
+<form method="get" action="??route??">
+	<input type="text" name="users?" placeholder="type your search here">
+	<input type="submit" value="Search" class="button">
+</form>
+
+	<%= @user.username %>
+	<%= @user.bio %>
+	<%= @user.location %>
+	<!-- need a link to edit user page(username, location, bio) -->
+
+<form method="post" action="??route??">
+	<input id="twit-text" type="text" name="twit" placeholder="Got something to say?">
+	<input type="submit" value="Twit?" class="button">
+</form>
+
+	<% @posts.each do |post| %>
+	<%= @posts.content %>
+	<% end %>
