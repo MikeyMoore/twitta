@@ -24,6 +24,7 @@ post '/users/results' do
 	if !username.empty?
 		@queries << username
 	end
+	# redirect
 	erb :results
 end
 
@@ -36,12 +37,12 @@ post '/users/edit' do
 	id = params[:id]
 	@user = User.find(params[:id])
 	@user.update(params[:user])
-	redirect '/'
+	redirect "/users/#{session[:user_id]}"
 end
 
 post '/users/post' do
 	@post = Post.create(content: params[:Twit], user_id: params[:id])
-	redirect '/'
+	redirect "/users/#{session[:user_id]}"
 end
 
 get '/users/friend/:id' do

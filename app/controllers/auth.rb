@@ -6,7 +6,7 @@ post '/login' do
   @user = User.find_by(email: params[:user][:email])
   if @user.authenticate(params[:user][:password])
     session[:user_id] = @user.id
-    erb :show
+    redirect "/users/#{session[:user_id]}"
   else
     redirect '/'
   end
@@ -18,12 +18,12 @@ get '/logout' do
 end
 
 get '/login' do
-  erb :index
+  erb :login
 end
 
 get '/users/new' do 
   erb :new
-  end
+end
 
 post '/users/new' do
 @a = User.new(params[:user])
