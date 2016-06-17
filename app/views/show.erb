@@ -4,9 +4,11 @@
 </form>
 
 	<%= @user.username %>
-	<%= @user.bio %>
+	<%= @user.about_me %>
 	<%= @user.location %>
-	<!-- need a link to edit user page(username, location, bio) -->
+<form action="/users/edit" method="get">
+	<input type="submit" value="Edit Profile">
+</form>
 
 <form method="post" action="??route??">
 	<input id="twit-text" type="text" name="twit" placeholder="Got something to say?">
@@ -16,3 +18,4 @@
 	<% @posts.each do |post| %>
 	<%= @posts.content %>
 	<% end %>
+

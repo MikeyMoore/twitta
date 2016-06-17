@@ -1,0 +1,13 @@
+<form method="post" action="/users/edit">
+	<input type="text" name="user[first_name]" placeholder="<%= @user.try(:first_name) %>">
+	<input type="text" name="user[last_name]" placeholder="<%= @user.try(:last_name) %>">
+	<input type="text" name="user[email]" placeholder="<%= @user.try(:email) %>">
+	<input type="text" name="user[username]" placeholder="<%= @user.try(:username) %>">
+	<input type="text" name="user[about_me]" placeholder="<%= @user.try(:about_me) %>">
+	<input type="text" name="user[location]" placeholder="<%= @user.try(:location) %>">
+</form>
+	
+	
+	
+
+
