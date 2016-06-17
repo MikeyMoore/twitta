@@ -1,0 +1,3 @@
+<% @queries.each do |query| %>
+  <a href="/users/<%= query[0].id %>"><%= query[0].username%></a> | <%= query[0].location %> | <%= query[0].about_me %>
+<% end %>
