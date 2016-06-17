@@ -19,3 +19,5 @@ post '/users/post' do
 	@post = Post.create(content: params[:Twit], user_id: session[:user_id])
 	redirect '/users/:id'
 end
+
+

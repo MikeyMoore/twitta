@@ -26,7 +26,4 @@ class User < ActiveRecord::Base
   	self.password == password
   end
 
-
-
-  
 end
