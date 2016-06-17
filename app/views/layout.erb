@@ -17,26 +17,22 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Welcome to Twitta!</title>
 </head>
 <body>
   <div id="content">
     <header>
-      <a href="/">
-        <div class="logo-wrapper">
-          <div id="logo">
-            <img src="../../public/img/twitta.jpg" alt="Twitta Logo">
-            <div id="logo-text"><h1>Twitta</h1></div>
-          </div>
-        </div></a>
-        <div id="login-toolbar">
-          <% if current_user %>
-          <a href="/logout">Logout</a>
-          <% else %>
-          <a href="/login">Login</a>
-          <% end %>
-        </header>
-        <%= yield %>
+    </header>
+    <div class="main">
+    
+      <div class="logo-wrapper">
+        <div id="logo">
+        <a href="/">
+          <img src="http://i.imgur.com/Frep9uu.jpg" alt="Twitta Logo"></a>
+          <div id="logo-text"><h1>Twitta</h1></div>  
+        </div>
       </div>
-    </body>
-    </html>
+    </div>
+    <%= yield %>
+  </body>
+  </html>
