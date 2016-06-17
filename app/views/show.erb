@@ -1,8 +1,8 @@
 <div class="navbar">
-<form method="get" action="??route??">
-	<input type="text" name="users?" placeholder="type your search here">
-	<input type="submit" value="Search" class="button">
-</form>
+	<form method="get" action="??route??">
+		<input type="text" name="users?" placeholder="type your search here">
+		<input type="submit" value="Search" class="button">
+	</form>
 </div>
 <div class="sidebar">
 	<!-- logo/name on top -->
@@ -12,16 +12,20 @@
 	<%= @user.username %>
 	<%= @user.about_me %>
 	<%= @user.location %>
-	<form action="/users/edit" method="get">
+	<form method="get" action="/users/<%= @user.id %>/edit">
 		<input type="submit" value="Edit Profile">
 	</form>
+
 	<form method="post" action="/users/post">
+		<input type="hidden" name="id" value="<%= @user.id %>">
 		<input id="twit-text" type="text" name="Twit" placeholder="Got something to say?">
 		<input type="submit" value="Twit" class="button">
 	</form>
-	<% if @post != nil %>
-		<% @posts.each do |post| %>
-		<%= @posts.content %>
-		<% end %>
+
+	<% if @posts != nil %>
+	<% @posts.each do |post| %>
+	<%= post.content %>
+	<% end %>
 	<% end %>
 </div>
+

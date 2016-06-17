@@ -1,23 +1,24 @@
 get '/users/:id' do
-	@user = User.find_by(session[:user_id])
-	@posts = Post.find_by(user_id: session[:user_id]) 
+	@user = User.find(params[:id])
+	@posts = Post.where(user_id: @user.id) 
 	erb :show
 end
- 
-get '/users/edit' do
-	@user = User.find_by(session[:user_id])
+
+get '/users/:id/edit' do
+	@user = User.find(params[:id])
 	erb :edit
 end
 
 post '/users/edit' do
-	@user = User.find_by(session[:user_id])
+	id = params[:id]
+	@user = User.find(params[:id])
 	@user.update(params[:user])
-	redirect '/users/:id'
+	redirect '/'
 end
 
 post '/users/post' do
-	@post = Post.create(content: params[:Twit], user_id: session[:user_id])
-	redirect '/users/:id'
+	@post = Post.create(content: params[:Twit], user_id: params[:id])
+	redirect '/'
 end
 
 
