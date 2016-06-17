@@ -1,3 +1,6 @@
+get '/' do
+	erb :login
+end 
 
 post '/login' do
   user = User.find_by(username: params[:username])
