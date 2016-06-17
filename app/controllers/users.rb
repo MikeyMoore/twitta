@@ -1,3 +1,9 @@
+get '/users/stream' do
+	@posts = []
+	@posts = Post.order(:updated_at)
+	erb :stream
+end
+
 get '/users/:id' do
 	@user = User.find(params[:id])
 	@posts = Post.where(user_id: @user.id) 
@@ -43,5 +49,7 @@ get '/users/friend/:id' do
 	@posts = Post.where(user_id: @user.id) 
 	erb :show_other
 end
+
+
 
 
