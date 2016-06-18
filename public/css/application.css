@@ -8,6 +8,23 @@ body {
   /*outline: solid red;*/
 }
 
+.navbar {
+  margin:0 auto;
+  margin-left:35%;
+  display:inline-block;
+  align-self: center;
+}
+
+#log-out-button {
+  margin-left:35%;
+  align-self: center;
+}
+
+#stream-button {
+  margin-left:35%;
+  align-self: center;
+}
+
   .triangle-isosceles {
   position:relative;
   padding:15px;

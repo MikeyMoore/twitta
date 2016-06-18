@@ -7,14 +7,12 @@
 	<form>
 		<input type="submit" value="Log Out" id="log-out-button" formaction="/logout" formmethod="post">
 	</form>
-</div>
-<div class="sidebar">
-	<!-- logo/name on top -->
-	<!-- where followers/following goes -->
+
 	<form method="get" action="/users/stream">
-	<input type="submit" value="Stream" class="button">
+	<input type="submit" value="Stream" id="stream-button" class="button">
 </form>
 </div>
+
 <div class="main">
 	<%= @user.first_name %>
 	<%= @user.last_name %>
